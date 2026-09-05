@@ -11,6 +11,7 @@ import SendIcon from '@mui/icons-material/Send';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import PublicIcon from '@mui/icons-material/Public';
 import { siteConfig } from '../content/site.config';
+import GoogleMap from '../components/contact/locationMap';
 
 interface ContactFormData {
   fullName: string;
@@ -291,7 +292,9 @@ export default function ContactPage() {
           </div>
         </div>
 
+
       </div>
+        <GoogleMap />
 
     </main>
   );
