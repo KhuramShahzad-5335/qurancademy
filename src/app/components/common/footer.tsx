@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Brand & About */}
           <div className="md:col-span-1">
             <Link href="/" className="text-xl font-bold tracking-tight text-white flex items-center gap-2 mb-3">
-              <span className="bg-white text-black px-2 py-0.5 rounded font-mono text-sm">eT</span>
+              <span className="bg-white text-black px-2 py-0.5 rounded font-mono text-sm">QA</span>
               {siteConfig.name}
             </Link>
             <p className="text-xs text-neutral-400 leading-relaxed">
