@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./components/common/header";
 import Footer from "./components/common/footer";
 import ReviewsSlider from "./components/common/reviewsSlider";
+import FloatingSupportWidget from "./components/common/floatingWidget";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({
         <div className="flex-1">{children}</div>
         <ReviewsSlider/>
         <Footer />
+        <FloatingSupportWidget />
       </body>
     </html>
   );
