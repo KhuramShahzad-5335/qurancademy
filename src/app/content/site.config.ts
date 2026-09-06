@@ -31,7 +31,7 @@ export const siteConfig = {
   whatsappLink:
     "https://wa.me/923471713760?text=Assalamu%20Alaikum%21%20I%20want%20to%20book%20a%20free%20demo%20Quran%20class.",
   email: "dummy@dummy.pk",
-  address: "Islamabad, Pakistan",
+  address: "Township Lahore, Pakistan",
 
   navLinks: [
     // { label: "How It Works", href: "#how-it-works" },

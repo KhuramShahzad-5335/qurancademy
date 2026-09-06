@@ -62,7 +62,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs text-neutral-400">
               <li>
-                <span className="text-neutral-500">WhatsApp: </span>
+                <span className="text-neutral-500">Whatsapp: </span>
                 <a 
                   href={siteConfig.whatsappLink} 
                   target="_blank" 

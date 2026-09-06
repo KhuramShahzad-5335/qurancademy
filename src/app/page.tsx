@@ -1,4 +1,5 @@
 import { siteConfig } from "./content/site.config";
+import Link from "next/link";
 
 // MUI Icons
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
@@ -13,25 +14,7 @@ import ChatIcon from "@mui/icons-material/Chat";
 import OndemandVideoIcon from "@mui/icons-material/OndemandVideo";
 import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
-import GroupsIcon from "@mui/icons-material/Groups";
-import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
-
-const getStatIcon = (index: number) => {
-  switch (index) {
-    case 0:
-      return <PeopleAltIcon className="text-text-white text-2xl" />;
-    case 1:
-      return <GroupsIcon className="text-text-white text-2xl" />;
-    case 2:
-      return <Person2OutlinedIcon className="text-text-white text-2xl" />;
-    case 3:
-      return <AccessTimeIcon className="text-text-white text-2xl" />;
-    default:
-      return null;
-  }
-};
+import GoogleMap from "./components/contact/locationMap";
 
 // Map course codes or index to relevant icons
 const getCourseIcon = (code: string) => {
@@ -66,54 +49,46 @@ const getStepIcon = (index: number) => {
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-neutral-950 text-neutral-100">
-      {/* Hero Section */}
-      <section className="py-20 px-4 max-w-6xl mx-auto text-center border-b border-neutral-800/80">
-        <div className="inline-flex items-center gap-2 bg-neutral-900/90 border border-neutral-800 text-neutral-300 text-xs px-4 py-1.5 rounded-full mb-6 font-medium shadow-sm">
-          <span>🕌</span>
-          <span>{siteConfig.tagline}</span>
-        </div>
-
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
-          Learn Quran at Home with Certified Male & Female Teachers
-        </h1>
-
-        <p className="mt-6 text-lg text-neutral-400 max-w-2xl mx-auto leading-relaxed">
-          Interactive 1-on-1 live classes for Noorani Qaida, Nazra with Tajweed,
-          Hifz, and Islamic Studies. Start with a free trial class today.
-        </p>
-
-        {/* WhatsApp Direct Action Button */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href={siteConfig.whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-3 w-full sm:w-auto text-base py-3.5 px-8 rounded-xl font-bold bg-emerald-600 hover:bg-emerald-500 text-white transition-all duration-200 shadow-xl shadow-emerald-950/50"
-          >
-            <WhatsAppIcon className="text-2xl text-white" />
-            <span>Chat on WhatsApp to Book Free Demo</span>
-            <ArrowForwardIcon className="text-lg opacity-80" />
-          </a>
-        </div>
-
-        {/* Restyled Quick Stats Grid */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
-          {siteConfig.stats.map((stat, i) => (
-            <div
-              key={i}
-              className="p-5 bg-neutral-900/50 border border-neutral-800/80 rounded-2xl text-center hover:border-neutral-700/80 hover:bg-neutral-900/80 transition-all duration-200 flex flex-col items-center justify-center group"
-            >
-              <div className="p-2.5 mb-3 bg-neutral-800/60 border border-neutral-700/40 rounded-xl transition-transform duration-200">
-                {getStatIcon(i)}
-              </div>
-              <div className="text-xl md:text-2xl font-extrabold text-white tracking-tight">
-                {stat.value}
-              </div>
-              <div className="text-xs text-neutral-400 mt-1 font-medium">
-                {stat.label}
-              </div>
+      <section className="relative isolate min-h-[calc(100svh-76px)] overflow-hidden bg-[#07100e] text-white">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_76%_38%,rgba(16,185,129,0.18),transparent_26%),radial-gradient(circle_at_15%_80%,rgba(45,212,191,0.09),transparent_24%),linear-gradient(120deg,#07100e_0%,#0b1714_52%,#07100e_100%)]" />
+        <div className="absolute inset-0 -z-10 opacity-25 [background-image:linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:72px_72px] [mask-image:linear-gradient(to_bottom,black,transparent_80%)]" />
+        <div className="mx-auto grid min-h-[calc(100svh-76px)] w-full max-w-7xl items-center gap-12 px-5 pb-12 pt-12 sm:px-8 lg:grid-cols-[1.08fr_0.92fr] lg:px-10 lg:pb-16 lg:pt-0">
+          <div className="max-w-3xl animate-[fade-up_700ms_ease-out_both]">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-300/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-emerald-200 backdrop-blur-sm">
+              <span className="h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_12px_#6ee7b7]" />
+              {siteConfig.tagline}
             </div>
-          ))}
+            <h1 className="max-w-3xl text-5xl font-black leading-[0.98] tracking-[-0.04em] text-white sm:text-6xl lg:text-8xl">
+              Learn with purpose<span className="text-emerald-300">.</span>
+            </h1>
+            <p className="mt-7 max-w-xl text-base leading-7 text-emerald-50/65 sm:text-lg">
+              Live, one-on-one Quran classes with trusted male and female teachers. Build a lasting connection with the Quran from wherever you are.
+            </p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <a href={siteConfig.whatsappLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-3 rounded-full bg-emerald-300 px-6 py-3.5 text-sm font-bold text-[#07100e] shadow-[0_12px_40px_rgba(52,211,153,0.2)] transition-transform hover:-translate-y-0.5 hover:bg-emerald-200">
+                <WhatsAppIcon style={{ fontSize: 20 }} />
+                Book a free class
+                <ArrowForwardIcon style={{ fontSize: 18 }} />
+              </a>
+              <Link href="#courses" className="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3.5 text-sm font-semibold text-white/80 transition-colors hover:border-emerald-300/40 hover:text-white">
+                Explore courses
+              </Link>
+            </div>
+          </div>
+
+          <div className="relative hidden min-h-[390px] lg:block">
+            <div className="absolute right-[12%] top-[12%] h-72 w-72 rounded-full border border-emerald-200/20 bg-emerald-200/[0.04] shadow-[0_0_100px_rgba(52,211,153,0.12)]" />
+            <div className="absolute right-[25%] top-[25%] flex h-48 w-48 items-center justify-center rounded-full border border-emerald-200/25 bg-[#10231e]/80 text-center shadow-2xl backdrop-blur-sm">
+              <div><span className="block text-5xl font-black tracking-tight text-emerald-200">1:1</span><span className="mt-1 block text-xs uppercase tracking-[0.2em] text-emerald-50/55">live learning</span></div>
+            </div>
+            <div className="absolute bottom-4 right-0 max-w-[230px] rounded-2xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur-md">
+              <p className="text-3xl font-black text-white">24/7</p>
+              <p className="mt-1 text-sm leading-5 text-emerald-50/55">Flexible hours for every family and timezone.</p>
+            </div>
+          </div>
+        </div>
+        <div className="absolute bottom-6 left-5 flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-emerald-50/40 sm:left-8 lg:left-10">
+          <span className="h-px w-10 bg-emerald-300/40" /> Scroll to discover
         </div>
       </section>
 
@@ -177,7 +152,7 @@ export default function HomePage() {
                 className="mt-6 pt-4 border-t border-neutral-800/60 text-xs font-semibold text-text-white hover:text-emerald-300 flex items-center gap-1.5 transition-colors"
               >
                 <span>Inquire via WhatsApp</span>
-                <ArrowForwardIcon className="text-sm transition-transform group-hover:translate-x-1"/>
+                <ArrowForwardIcon className="text-sm transition-transform group-hover:translate-x-1" />
               </a>
             </div>
           ))}
@@ -244,7 +219,7 @@ export default function HomePage() {
       </section>
 
       {/* 3 Step Process */}
-      <section id="how-it-works" className="py-20 px-4 max-w-6xl mx-auto">
+      <section id="how-it-works" className="py-20 px-4 max-w-6xl mx-auto border-b border-neutral-800/80">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-white tracking-tight">
             How to Get Started
@@ -279,6 +254,9 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+      <div className="max-w-6xl mx-auto px-4 py-20 border-b border-neutral-800/80">
+        <GoogleMap />
+      </div>
     </main>
   );
 }

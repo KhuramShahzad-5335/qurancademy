@@ -69,7 +69,7 @@ export default function ReviewsSlider({
   const currentReview = reviews[currentIndex];
 
   return (
-    <section className="py-16 px-4 max-w-5xl mx-auto">
+    <section className="py-16 px-4 max-w-6xl mx-auto w-full">
       {/* Header */}
       <div className="text-center mb-10">
         <span className="text-xs font-mono uppercase tracking-widest text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 px-3 py-1 rounded-full inline-block mb-3">
