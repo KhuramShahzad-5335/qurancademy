@@ -25,7 +25,7 @@ export default function HomePage() {
             rel="noopener noreferrer"
             className="bw-button-primary w-full sm:w-auto text-base py-3 px-6"
           >
-            Chat on WhatsApp to Book Free Demo →
+            Chat on Whatsapp to Book Free Demo →
           </a>
         </div>
 
@@ -72,7 +72,7 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="mt-6 text-xs text-neutral-200 underline underline-offset-4 hover:text-white"
               >
-                Inquire via WhatsApp →
+                Inquire via Whatsapp →
               </a>
             </div>
           ))}

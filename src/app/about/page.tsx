@@ -59,7 +59,7 @@ const teacherQualifications = [
 ];
 
 const processSteps = [
-  { step: "01", title: "Book a Free Demo", desc: "Contact us on WhatsApp to schedule a complimentary 1-on-1 trial class." },
+  { step: "01", title: "Book a Free Demo", desc: "Contact us on Whatsapp to schedule a complimentary 1-on-1 trial class." },
   { step: "02", title: "Teacher Allocation", desc: "We match you or your child with a male or female teacher based on preferences." },
   { step: "03", title: "Assessment & Schedule", desc: "The tutor evaluates starting levels and establishes a convenient weekly timetable." },
   { step: "04", title: "Begin Regular Lessons", desc: "Start regular online classes with monthly progress updates provided to parents." },
@@ -201,7 +201,7 @@ export default function AboutUsPage() {
             className="bw-button-primary inline-flex items-center gap-2 px-6 py-3 text-base font-medium rounded-lg transition-transform active:scale-95"
           >
             <PhoneWhatsAppIcon />
-            Book Free Demo on WhatsApp
+            Book Free Demo on Whatsapp
             <ArrowForwardIcon className="text-sm" />
           </a>
         </div>

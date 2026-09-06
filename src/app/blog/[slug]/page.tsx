@@ -85,7 +85,7 @@ export default async function BlogPostDetailPage({ params }: BlogPostPageProps) 
           rel="noopener noreferrer"
           className="bw-button-primary mt-4 inline-flex text-xs py-2.5 px-5"
         >
-          Book Free Trial Class via WhatsApp →
+          Book Free Trial Class via Whatsapp →
         </a>
       </div>
     </main>

@@ -117,7 +117,7 @@ export default function BlogListingPage() {
           rel="noopener noreferrer"
           className="bw-button-primary mt-6 inline-flex"
         >
-          Book Free Trial on WhatsApp →
+          Book Free Trial on Whatsapp →
         </a>
       </section>
     </main>

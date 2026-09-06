@@ -39,7 +39,7 @@ export default function FAQsPage() {
           rel="noopener noreferrer"
           className="bw-button-primary mt-6 inline-flex"
         >
-          Ask Us on WhatsApp →
+          Ask Us on Whatsapp →
         </a>
       </section>
     </main>

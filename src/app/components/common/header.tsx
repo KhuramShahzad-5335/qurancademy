@@ -23,7 +23,7 @@ export default function Header() {
         {/* CTA Button */}
         <div className="flex items-center gap-3">
           <a href={siteConfig.whatsappLink} target="_blank" rel="noopener noreferrer" className="bw-button-primary text-sm">
-            WhatsApp Us
+            Whatsapp Us
           </a>
         </div>
       </div>

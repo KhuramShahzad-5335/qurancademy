@@ -85,7 +85,7 @@ export default function ContactPage() {
           Contact eTutors Academy
         </h1>
         <p className="text-neutral-400 text-sm md:text-base mt-3 max-w-xl mx-auto leading-relaxed">
-          Have questions about our 1-on-1 Quran classes or need to schedule a free trial demo? Send us a message or chat with us directly on WhatsApp.
+          Have questions about our 1-on-1 Quran classes or need to schedule a free trial demo? Send us a message or chat with us directly on Whatsapp.
         </p>
       </div>
 
@@ -226,7 +226,7 @@ export default function ContactPage() {
 
                   <div>
                     <label htmlFor="phone" className="block text-xs font-mono text-neutral-300 uppercase tracking-wider mb-1.5">
-                      Phone / WhatsApp Number *
+                      Phone / Whatsapp Number *
                     </label>
                     <input
                       type="tel"
