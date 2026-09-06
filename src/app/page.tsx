@@ -13,22 +13,21 @@ import ChatIcon from "@mui/icons-material/Chat";
 import OndemandVideoIcon from "@mui/icons-material/OndemandVideo";
 import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import PeopleAltIcon from "@mui/icons-material/PeopleAlt"; // Certified Teachers (Male & Female)
-import GroupsIcon from "@mui/icons-material/Groups"; // Active Students
-// import PersonOutlineIcon from "@mui/icons-material/PersonOutline"; // 1-on-1 Free Demo
+import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+import GroupsIcon from "@mui/icons-material/Groups";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
-import AccessTimeIcon from "@mui/icons-material/AccessTime"; // 24/7 Flexible Hours
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
 
 const getStatIcon = (index: number) => {
   switch (index) {
     case 0:
-      return <PeopleAltIcon className="text-emerald-400 text-2xl" />;
+      return <PeopleAltIcon className="text-text-white text-2xl" />;
     case 1:
-      return <GroupsIcon className="text-emerald-400 text-2xl" />;
+      return <GroupsIcon className="text-text-white text-2xl" />;
     case 2:
-      return <Person2OutlinedIcon className="text-emerald-400 text-2xl" />;
+      return <Person2OutlinedIcon className="text-text-white text-2xl" />;
     case 3:
-      return <AccessTimeIcon className="text-emerald-400 text-2xl" />;
+      return <AccessTimeIcon className="text-text-white text-2xl" />;
     default:
       return null;
   }
@@ -38,15 +37,15 @@ const getStatIcon = (index: number) => {
 const getCourseIcon = (code: string) => {
   switch (code) {
     case "01":
-      return <MenuBookIcon className="text-emerald-400" />;
+      return <MenuBookIcon className="text-text-white" />;
     case "02":
-      return <RecordVoiceOverIcon className="text-emerald-400" />;
+      return <RecordVoiceOverIcon className="text-text-white" />;
     case "03":
-      return <AutoBooksIcon className="text-emerald-400" />;
+      return <AutoBooksIcon className="text-text-white" />;
     case "04":
-      return <TranslateIcon className="text-emerald-400" />;
+      return <TranslateIcon className="text-text-white" />;
     default:
-      return <SchoolIcon className="text-emerald-400" />;
+      return <SchoolIcon className="text-text-white" />;
   }
 };
 
@@ -54,13 +53,13 @@ const getCourseIcon = (code: string) => {
 const getStepIcon = (index: number) => {
   switch (index) {
     case 0:
-      return <ChatIcon className="text-emerald-400 text-2xl" />;
+      return <ChatIcon className="text-text-white text-2xl" />;
     case 1:
-      return <OndemandVideoIcon className="text-emerald-400 text-2xl" />;
+      return <OndemandVideoIcon className="text-text-white text-2xl" />;
     case 2:
-      return <EventAvailableIcon className="text-emerald-400 text-2xl" />;
+      return <EventAvailableIcon className="text-text-white text-2xl" />;
     default:
-      return <SchoolIcon className="text-emerald-400 text-2xl" />;
+      return <SchoolIcon className="text-text-white text-2xl" />;
   }
 };
 
@@ -89,7 +88,7 @@ export default function HomePage() {
             href={siteConfig.whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-3 w-full sm:w-auto text-base py-3.5 px-8 rounded-xl font-bold bg-emerald-600 hover:bg-emerald-500 text-white transition-all duration-200 shadow-xl shadow-emerald-950/50 hover:scale-[1.02] active:scale-[0.98]"
+            className="inline-flex items-center justify-center gap-3 w-full sm:w-auto text-base py-3.5 px-8 rounded-xl font-bold bg-emerald-600 hover:bg-emerald-500 text-white transition-all duration-200 shadow-xl shadow-emerald-950/50"
           >
             <WhatsAppIcon className="text-2xl text-white" />
             <span>Chat on WhatsApp to Book Free Demo</span>
@@ -104,7 +103,7 @@ export default function HomePage() {
               key={i}
               className="p-5 bg-neutral-900/50 border border-neutral-800/80 rounded-2xl text-center hover:border-neutral-700/80 hover:bg-neutral-900/80 transition-all duration-200 flex flex-col items-center justify-center group"
             >
-              <div className="p-2.5 mb-3 bg-neutral-800/60 border border-neutral-700/40 rounded-xl group-hover:scale-110 transition-transform duration-200">
+              <div className="p-2.5 mb-3 bg-neutral-800/60 border border-neutral-700/40 rounded-xl transition-transform duration-200">
                 {getStatIcon(i)}
               </div>
               <div className="text-xl md:text-2xl font-extrabold text-white tracking-tight">
@@ -141,11 +140,11 @@ export default function HomePage() {
               <div>
                 <div className="flex justify-between items-start mb-4">
                   <div className="flex items-center gap-3">
-                    <div className="p-2.5 bg-neutral-800/80 border border-neutral-700/50 rounded-xl group-hover:scale-105 transition-transform duration-200">
+                    <div className="p-2.5 bg-neutral-800/80 border border-neutral-700/50 rounded-xl transition-transform duration-200">
                       {getCourseIcon(course.code)}
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                      <h3 className="text-xl font-bold text-white transition-colors">
                         {course.title}
                       </h3>
                       <span className="text-[11px] font-mono text-neutral-400">
@@ -175,10 +174,10 @@ export default function HomePage() {
                 href={`${siteConfig.whatsappLink}&text=Assalamu%20Alaikum%21%20I%20want%20to%20ask%20about%20${encodeURIComponent(course.title)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 pt-4 border-t border-neutral-800/60 text-xs font-semibold text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5 transition-colors"
+                className="mt-6 pt-4 border-t border-neutral-800/60 text-xs font-semibold text-text-white hover:text-emerald-300 flex items-center gap-1.5 transition-colors"
               >
                 <span>Inquire via WhatsApp</span>
-                <ArrowForwardIcon className="text-sm transition-transform group-hover:translate-x-1" />
+                <ArrowForwardIcon className="text-sm transition-transform group-hover:translate-x-1"/>
               </a>
             </div>
           ))}
@@ -211,7 +210,7 @@ export default function HomePage() {
                   {teacher.name[0]}
                 </div>
                 <div
-                  className="absolute -bottom-1 -right-1 p-1 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-emerald-400"
+                  className="absolute -bottom-1 -right-1 p-1 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-text-white"
                   title="Verified Teacher"
                 >
                   <VerifiedUserIcon style={{ fontSize: 16 }} />
@@ -225,7 +224,7 @@ export default function HomePage() {
 
               <div className="mt-3 py-1 px-3 bg-neutral-950/80 border border-neutral-800/80 rounded-lg text-xs text-neutral-300 font-medium">
                 Specialist:{" "}
-                <span className="text-emerald-400">
+                <span className="text-text-white">
                   {teacher.specialization}
                 </span>
               </div>

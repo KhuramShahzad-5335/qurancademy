@@ -14,6 +14,16 @@ export interface Course {
   topics: string[];
 }
 
+export interface Review {
+  id: string;
+  name: string;
+  location: string;
+  rating: number;
+  date: string;
+  review: string;
+  course: string;
+}
+
 export const siteConfig = {
   name: "Qurancademy",
   tagline: "Learn Quran Online with Certified Male & Female Teachers",
@@ -113,4 +123,37 @@ export const siteConfig = {
       desc: "Choose flexible days and timings that fit your schedule and start regular 1-on-1 live sessions.",
     },
   ],
+
+  reviews: [
+    {
+      id: "1",
+      name: "Muhammad Usman",
+      location: "London, UK",
+      rating: 5,
+      date: "12 Aug 2026",
+      course: "Quran Nazra with Tajweed",
+      review:
+        "Alhamdulillah, my 8-year-old son improved his Tajweed pronunciation drastically within just 2 months. The female teacher is extremely patient and punctual.",
+    },
+    {
+      id: "2",
+      name: "Aisha Sidduiqa",
+      location: "Birmingham, UK",
+      rating: 4,
+      date: "28 Jul 2026",
+      course: "Noorani Qaida Course",
+      review:
+        "As a busy mother, having 24/7 flexible hours was a lifesaver. My daughter looks forward to her classes every day!",
+    },
+    {
+      id: "3",
+      name: "Tariq Mahmood",
+      location: "Toronto, Canada",
+      rating: 3,
+      date: "04 Jul 2026",
+      course: "Hifz-ul-Quran",
+      review:
+        "The daily Sabaq and Sabqi revision tracking system keeps my son accountable. Very professional online Quran academy.",
+    },
+  ] as Review[],
 };
