@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "eTutors Academy",
-  description: "Best Online Tutors in Pakistan",
+  title: "Qurancademy",
+  description: "Learn Quran Online with Certified Male & Female Teachers",
 };
 
 export default function RootLayout({

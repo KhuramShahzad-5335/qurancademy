@@ -15,7 +15,7 @@ export interface Course {
 }
 
 export const siteConfig = {
-  name: "eTutors Quran Academy",
+  name: "Qurancademy",
   tagline: "Learn Quran Online with Certified Male & Female Teachers",
   whatsappNumber: "+92 347 1713760",
   whatsappLink:

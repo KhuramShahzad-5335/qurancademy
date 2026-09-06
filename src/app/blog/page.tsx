@@ -3,7 +3,7 @@ import { blogsData } from '../content/blogs';
 import { siteConfig } from '../content/site.config';
 
 export const metadata = {
-  title: "Quran Learning Blog & Guides | eTutors Quran Academy",
+  title: "Quran Learning Blog & Guides | Qurancademy",
   description: "Read expert articles on Tajweed, Noorani Qaida, Quran memorization, and online Islamic education.",
 };
 

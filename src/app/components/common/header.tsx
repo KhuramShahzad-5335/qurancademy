@@ -8,7 +8,7 @@ export default function Header() {
         {/* Brand Logo */}
         <Link href="/" className="text-xl font-bold tracking-tight text-white flex items-center gap-2">
           <span className="bg-white text-black px-2 py-0.5 rounded font-mono">eT</span>
-          eTutors Academy
+          Qurancademy
         </Link>
 
         {/* Navigation Links */}

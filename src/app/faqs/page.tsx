@@ -4,7 +4,7 @@ import { siteConfig } from "../content/site.config";
 
 
 export const metadata = {
-  title: "Frequently Asked Questions | eTutors Quran Academy",
+  title: "Frequently Asked Questions | Qurancademy",
   description: "Find answers about our 1-on-1 online Quran classes, teachers, and scheduling.",
 };
 

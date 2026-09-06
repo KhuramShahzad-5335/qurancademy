@@ -16,8 +16,8 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
 
 export const metadata = {
-  title: "About Us | eTutors Online Quran Academy",
-  description: "Learn about eTutors Online Quran Academy — certified male and female Quran tutors delivering 1-on-1 Tajweed, Qaida, Hifz, and Islamic studies globally.",
+  title: "About Us | Qurancademy",
+  description: "Learn about Qurancademy — certified male and female Quran tutors delivering 1-on-1 Tajweed, Qaida, Hifz, and Islamic studies globally.",
 };
 
 const stats = [
@@ -72,13 +72,13 @@ export default function AboutUsPage() {
       {/* 1. Hero Section */}
       <section className="text-center border-b border-neutral-800 pb-16">
         <span className="text-xs font-mono uppercase tracking-widest text-neutral-400 bg-neutral-900 border border-neutral-800 px-3.5 py-1.5 rounded-full inline-block">
-          About eTutors Academy
+          About Qurancademy
         </span>
         <h1 className="text-4xl md:text-6xl font-extrabold text-white mt-6 tracking-tight leading-tight">
           Empowering Quranic Learning <br className="hidden md:block" /> Across the Globe
         </h1>
         <p className="text-neutral-400 text-base md:text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
-          eTutors is a premier online Quran teaching platform dedicated to delivering authentic Quranic education with Tajweed, Hifz, and Islamic studies to students of all ages worldwide.
+          Qurancademy is a premier online Quran teaching platform dedicated to delivering authentic Quranic education with Tajweed, Hifz, and Islamic studies to students of all ages worldwide.
         </p>
       </section>
 
@@ -122,7 +122,7 @@ export default function AboutUsPage() {
       {/* 4. Core Values Grid */}
       <section className="space-y-8">
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-white">Why Choose eTutors?</h2>
+          <h2 className="text-3xl font-bold text-white">Why Choose Qurancademy?</h2>
           <p className="text-neutral-400 text-sm mt-2">Built around quality, discipline, and student convenience.</p>
         </div>
 

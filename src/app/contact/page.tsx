@@ -82,7 +82,7 @@ export default function ContactPage() {
           Get In Touch
         </span>
         <h1 className="text-4xl md:text-5xl font-extrabold text-white mt-4 tracking-tight">
-          Contact eTutors Academy
+          Contact Qurancademy
         </h1>
         <p className="text-neutral-400 text-sm md:text-base mt-3 max-w-xl mx-auto leading-relaxed">
           Have questions about our 1-on-1 Quran classes or need to schedule a free trial demo? Send us a message or chat with us directly on Whatsapp.
@@ -116,7 +116,7 @@ export default function ContactPage() {
 
             {/* Email */}
             <a
-              href="mailto:support@etutors.pk"
+              href="mailto:support@qurancademy.pk"
               className="flex items-start gap-4 p-3 bg-neutral-800/50 hover:bg-neutral-800 border border-neutral-700/60 rounded-lg transition-colors group"
             >
               <div className="p-2.5 bg-neutral-800 rounded-lg text-white group-hover:scale-105 transition-transform">
@@ -124,7 +124,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <span className="text-xs font-mono text-neutral-400 uppercase tracking-wider block">Email Address</span>
-                <span className="text-sm font-semibold text-white">support@etutors.pk</span>
+                <span className="text-sm font-semibold text-white">support@qurancademy.pk</span>
               </div>
             </a>
 
@@ -157,7 +157,7 @@ export default function ContactPage() {
               <span>Headquarters</span>
             </div>
             <p className="text-neutral-400 text-xs leading-relaxed">
-              eTutors Online Quran Academy, Pakistan & Global Distance Learning Operations.
+              Qurancademy Online Quran Academy, Pakistan & Global Distance Learning Operations.
             </p>
           </div>
 

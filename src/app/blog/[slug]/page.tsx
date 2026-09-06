@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   if (!post) return { title: "Post Not Found" };
 
   return {
-    title: `${post.title} | eTutors Quran Academy`,
+    title: `${post.title} | Qurancademy`,
     description: post.excerpt,
   };
 }
@@ -57,7 +57,7 @@ export default async function BlogPostDetailPage({ params }: BlogPostPageProps) 
 
         <div className="mt-6 flex items-center justify-between text-xs text-neutral-400 font-mono">
           <span>Written by <strong className="text-neutral-200">{post.author}</strong></span>
-          <span>eTutors Academy Staff</span>
+          <span>Qurancademy Staff</span>
         </div>
       </header>
 
