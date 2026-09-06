@@ -20,7 +20,7 @@ export const siteConfig = {
   whatsappNumber: "+92 347 1713760",
   whatsappLink:
     "https://wa.me/923471713760?text=Assalamu%20Alaikum%21%20I%20want%20to%20book%20a%20free%20demo%20Quran%20class.",
-  email: "info@etutors.pk",
+  email: "dummy@dummy.pk",
   address: "Islamabad, Pakistan",
 
   navLinks: [
