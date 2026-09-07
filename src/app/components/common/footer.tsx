@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-950 border-t border-neutral-800 text-neutral-400 text-sm">
+    <footer className="relative z-[1] bg-neutral-950 border-t border-neutral-800 text-neutral-400 text-sm">
       <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           
@@ -62,7 +62,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs text-neutral-400">
               <li>
-                <span className="text-neutral-500">Whatsapp: </span>
+                <span className="text-neutral-500">WhatsApp: </span>
                 <a 
                   href={siteConfig.whatsappLink} 
                   target="_blank" 

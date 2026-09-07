@@ -5,6 +5,8 @@ import Header from "./components/common/header";
 import Footer from "./components/common/footer";
 import ReviewsSlider from "./components/common/reviewsSlider";
 import FloatingSupportWidget from "./components/common/floatingWidget";
+import BookLoader from "./components/common/bookLoader";
+import IslamicAmbientBackground from "./components/common/islamicAmbientBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,9 +33,11 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-neutral-950 text-neutral-100">
-        <Header /> {/* 2. Render Header here above children */}
-        <div className="flex-1">{children}</div>
+      <body className="min-h-full flex flex-col bg-transparent text-neutral-100">
+        <BookLoader />
+        <IslamicAmbientBackground />
+        <Header />
+        <div className="relative z-[1] flex-1">{children}</div>
         <ReviewsSlider/>
         <Footer />
         <FloatingSupportWidget />

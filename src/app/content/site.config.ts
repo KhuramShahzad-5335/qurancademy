@@ -60,7 +60,7 @@ export const siteConfig = {
       title: "Quran Nazra with Tajweed",
       code: "02",
       description:
-        "Fluent Quran recitation focusing on proper Tajweed rules, letters origin, and correct stops.",
+        "Fluent Quran recitation focusing on proper Tajweed rules, the origins of letters, and correct stops.",
       topics: ["Ghunnah & Ikhfa", "Madd Rules", "Fluency Practice"],
     },
     {

@@ -10,7 +10,7 @@ export const faqsData: FAQItem[] = [
     id: "1",
     category: "General & Classes",
     question: "How are online Quran classes conducted?",
-    answer: "All classes are conducted live and 1-on-1 via Zoom, Skype, or Whatsapp video call. You can join your sessions from any device — laptop, tablet, or smartphone — from anywhere in the world."
+    answer: "All classes are conducted live and 1-on-1 via Zoom, Skype, or WhatsApp video call. You can join your sessions from any device — laptop, tablet, or smartphone — from anywhere in the world."
   },
   {
     id: "2",
@@ -46,6 +46,6 @@ export const faqsData: FAQItem[] = [
     id: "7",
     category: "Schedules & Fees",
     question: "How do I register or discuss fee packages?",
-    answer: "You can click any 'Chat on Whatsapp' button on our website to message us directly. We will provide full details on flexible monthly packages and schedule your free demo class within 24 hours."
+    answer: "You can click any 'Chat on WhatsApp' button on our website to message us directly. We will provide full details on flexible monthly packages and schedule your free demo class within 24 hours."
   }
 ];

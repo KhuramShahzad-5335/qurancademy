@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { blogsData } from '@/app/content/blogs';
 import { siteConfig } from '@/app/content/site.config';
+import PageHero from "@/app/components/common/pageHero";
 
 // Pre-render static paths at build time
 export async function generateStaticParams() {
@@ -41,25 +42,13 @@ export default async function BlogPostDetailPage({ params }: BlogPostPageProps) 
         ← Back to All Articles
       </Link>
 
-      {/* Header Info */}
-      <header className="border-b border-neutral-800 pb-8 mb-8">
-        <div className="flex items-center gap-3 text-xs text-neutral-400 font-mono mb-4">
-          <span className="bg-neutral-800 text-neutral-200 px-2.5 py-1 rounded">{post.category}</span>
-          <span>•</span>
-          <span>{post.readTime}</span>
-          <span>•</span>
-          <span>{post.date}</span>
-        </div>
-
-        <h1 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
-          {post.title}
-        </h1>
-
-        <div className="mt-6 flex items-center justify-between text-xs text-neutral-400 font-mono">
-          <span>Written by <strong className="text-neutral-200">{post.author}</strong></span>
-          <span>Qurancademy Staff</span>
-        </div>
-      </header>
+      <PageHero
+        eyebrow={`${post.category} / ${post.readTime}`}
+        title={post.title}
+        description={post.excerpt}
+        asideValue={post.date.split(" ")[0]}
+        asideLabel={`by ${post.author}`}
+      />
 
       {/* Main Image Placeholder */}
       <div className="bg-neutral-800 h-64 md:h-80 rounded-xl flex items-center justify-center text-neutral-500 font-mono text-xs mb-10 border border-neutral-800">
@@ -85,7 +74,7 @@ export default async function BlogPostDetailPage({ params }: BlogPostPageProps) 
           rel="noopener noreferrer"
           className="bw-button-primary mt-4 inline-flex text-xs py-2.5 px-5"
         >
-          Book Free Trial Class via Whatsapp →
+          Book Free Trial Class via WhatsApp →
         </a>
       </div>
     </main>

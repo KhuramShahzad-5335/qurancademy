@@ -48,9 +48,9 @@ const getStepIcon = (index: number) => {
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-neutral-950 text-neutral-100">
-      <section className="relative isolate min-h-[calc(100svh-76px)] overflow-hidden bg-[#07100e] text-white">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_76%_38%,rgba(16,185,129,0.18),transparent_26%),radial-gradient(circle_at_15%_80%,rgba(45,212,191,0.09),transparent_24%),linear-gradient(120deg,#07100e_0%,#0b1714_52%,#07100e_100%)]" />
+    <main className="min-h-screen bg-transparent text-neutral-100">
+      <section className="relative isolate min-h-[calc(100svh-76px)] overflow-hidden bg-transparent text-white">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_76%_38%,rgba(16,185,129,0.18),transparent_26%),radial-gradient(circle_at_15%_80%,rgba(45,212,191,0.09),transparent_24%)]" />
         <div className="absolute inset-0 -z-10 opacity-25 [background-image:linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:72px_72px] [mask-image:linear-gradient(to_bottom,black,transparent_80%)]" />
         <div className="mx-auto grid min-h-[calc(100svh-76px)] w-full max-w-7xl items-center gap-12 px-5 pb-12 pt-12 sm:px-8 lg:grid-cols-[1.08fr_0.92fr] lg:px-10 lg:pb-16 lg:pt-0">
           <div className="max-w-3xl animate-[fade-up_700ms_ease-out_both]">

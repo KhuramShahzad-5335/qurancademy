@@ -14,6 +14,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 // import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 // import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
+import PageHero from "../components/common/pageHero";
 
 export const metadata = {
   title: "About Us | Qurancademy",
@@ -59,7 +60,7 @@ const teacherQualifications = [
 ];
 
 const processSteps = [
-  { step: "01", title: "Book a Free Demo", desc: "Contact us on Whatsapp to schedule a complimentary 1-on-1 trial class." },
+  { step: "01", title: "Book a Free Demo", desc: "Contact us on WhatsApp to schedule a complimentary 1-on-1 trial class." },
   { step: "02", title: "Teacher Allocation", desc: "We match you or your child with a male or female teacher based on preferences." },
   { step: "03", title: "Assessment & Schedule", desc: "The tutor evaluates starting levels and establishes a convenient weekly timetable." },
   { step: "04", title: "Begin Regular Lessons", desc: "Start regular online classes with monthly progress updates provided to parents." },
@@ -69,18 +70,13 @@ export default function AboutUsPage() {
   return (
     <main className="min-h-screen py-16 px-4 max-w-6xl mx-auto space-y-20">
       
-      {/* 1. Hero Section */}
-      <section className="text-center border-b border-neutral-800 pb-16">
-        <span className="text-xs font-mono uppercase tracking-widest text-neutral-400 bg-neutral-900 border border-neutral-800 px-3.5 py-1.5 rounded-full inline-block">
-          About Qurancademy
-        </span>
-        <h1 className="text-4xl md:text-6xl font-extrabold text-white mt-6 tracking-tight leading-tight">
-          Empowering Quranic Learning <br className="hidden md:block" /> Across the Globe
-        </h1>
-        <p className="text-neutral-400 text-base md:text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
-          Qurancademy is a premier online Quran teaching platform dedicated to delivering authentic Quranic education with Tajweed, Hifz, and Islamic studies to students of all ages worldwide.
-        </p>
-      </section>
+      <PageHero
+        eyebrow="About Qurancademy"
+        title="Empowering Quranic Learning Across the Globe"
+        description="Qurancademy is a premier online Quran teaching platform dedicated to delivering authentic Quranic education with Tajweed, Hifz, and Islamic studies to students of all ages worldwide."
+        asideValue="15+"
+        asideLabel="countries served"
+      />
 
       {/* 2. Key Metrics Stats Grid */}
       <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -201,7 +197,7 @@ export default function AboutUsPage() {
             className="bw-button-primary inline-flex items-center gap-2 px-6 py-3 text-base font-medium rounded-lg transition-transform active:scale-95"
           >
             <PhoneWhatsAppIcon />
-            Book Free Demo on Whatsapp
+            Book Free Demo on WhatsApp
             <ArrowForwardIcon className="text-sm" />
           </a>
         </div>

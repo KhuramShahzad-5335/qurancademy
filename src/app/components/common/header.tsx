@@ -50,7 +50,7 @@ export default function Header() {
             className="inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-300 px-5 py-2.5 text-sm font-bold text-[#07100e] shadow-lg shadow-emerald-950/40 transition-all hover:bg-emerald-200"
           >
             <WhatsAppIcon style={{ fontSize: 18 }} />
-            <span>Whatsapp Us</span>
+            <span>WhatsApp Us</span>
           </a>
         </div>
 

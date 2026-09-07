@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { blogsData } from '../content/blogs';
 import { siteConfig } from '../content/site.config';
+import PageHero from "../components/common/pageHero";
 
 export const metadata = {
   title: "Quran Learning Blog & Guides | Qurancademy",
@@ -13,22 +14,17 @@ export default function BlogListingPage() {
 
   return (
     <main className="min-h-screen py-16 px-4 max-w-6xl mx-auto">
-      {/* Page Header */}
-      <div className="text-center mb-16 border-b border-neutral-800 pb-12">
-        <span className="text-xs font-mono uppercase tracking-widest text-neutral-400 bg-neutral-900 border border-neutral-800 px-3 py-1 rounded-full">
-          Knowledge Base
-        </span>
-        <h1 className="text-4xl md:text-5xl font-extrabold text-white mt-4 tracking-tight">
-          Quran Learning & Tajweed Blog
-        </h1>
-        <p className="text-neutral-400 text-sm md:text-base mt-3 max-w-xl mx-auto">
-          Guides, tips, and insights on mastering Quran recitation, Tajweed rules, and Hifz from home.
-        </p>
-      </div>
+      <PageHero
+        eyebrow="Knowledge Base"
+        title="Quran Learning & Tajweed Blog"
+        description="Guides, tips, and insights on mastering Quran recitation, Tajweed rules, and Hifz from home."
+        asideValue="5+"
+        asideLabel="learning guides"
+      />
 
       {/* Featured Blog Post (Large Card) */}
       {featuredPost && (
-        <section className="mb-16">
+        <section className="my-16">
           <div className="bw-card p-0 overflow-hidden md:grid md:grid-cols-12 items-center gap-6">
             {/* Image Placeholder */}
             <div className="md:col-span-6 bg-neutral-800 h-64 md:h-full flex items-center justify-center text-neutral-500 font-mono text-xs border-b md:border-b-0 md:border-r border-neutral-800">
@@ -117,7 +113,7 @@ export default function BlogListingPage() {
           rel="noopener noreferrer"
           className="bw-button-primary mt-6 inline-flex"
         >
-          Book Free Trial on Whatsapp →
+          Book Free Trial on WhatsApp →
         </a>
       </section>
     </main>

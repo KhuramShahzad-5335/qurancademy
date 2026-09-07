@@ -12,6 +12,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import PublicIcon from '@mui/icons-material/Public';
 import { siteConfig } from '../content/site.config';
 import GoogleMap from '../components/contact/locationMap';
+import PageHero from "../components/common/pageHero";
 
 interface ContactFormData {
   fullName: string;
@@ -76,18 +77,13 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen py-16 px-4 max-w-6xl mx-auto space-y-16">
       
-      {/* 1. Header Section */}
-      <div className="text-center border-b border-neutral-800 pb-12">
-        <span className="text-xs font-mono uppercase tracking-widest text-neutral-400 bg-neutral-900 border border-neutral-800 px-3.5 py-1.5 rounded-full inline-block">
-          Get In Touch
-        </span>
-        <h1 className="text-4xl md:text-5xl font-extrabold text-white mt-4 tracking-tight">
-          Contact Qurancademy
-        </h1>
-        <p className="text-neutral-400 text-sm md:text-base mt-3 max-w-xl mx-auto leading-relaxed">
-          Have questions about our 1-on-1 Quran classes or need to schedule a free trial demo? Send us a message or chat with us directly on Whatsapp.
-        </p>
-      </div>
+      <PageHero
+        eyebrow="Get In Touch"
+        title="Contact Qurancademy"
+        description="Have questions about our 1-on-1 Quran classes or need to schedule a free trial demo? Send us a message or chat with us directly on WhatsApp."
+        asideValue="24/7"
+        asideLabel="global support"
+      />
 
       {/* 2. Main Content Grid */}
       <div className="grid lg:grid-cols-12 gap-10 items-start">
@@ -226,7 +222,7 @@ export default function ContactPage() {
 
                   <div>
                     <label htmlFor="phone" className="block text-xs font-mono text-neutral-300 uppercase tracking-wider mb-1.5">
-                      Phone / Whatsapp Number *
+                      Phone / WhatsApp Number *
                     </label>
                     <input
                       type="tel"
