@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/common/header";
 import Footer from "./components/common/footer";
-import ReviewsSlider from "./components/common/reviewsSlider";
+import ConditionalReviewsSlider from "./components/common/conditionalReviewsSlider";
 import FloatingSupportWidget from "./components/common/floatingWidget";
 import BookLoader from "./components/common/bookLoader";
 import IslamicAmbientBackground from "./components/common/islamicAmbientBackground";
@@ -38,7 +38,7 @@ export default function RootLayout({
         <IslamicAmbientBackground />
         <Header />
         <div className="relative z-[1] flex-1">{children}</div>
-        <ReviewsSlider/>
+        <ConditionalReviewsSlider />
         <Footer />
         <FloatingSupportWidget />
       </body>
