@@ -51,7 +51,7 @@ export default async function BlogPostDetailPage({ params }: BlogPostPageProps) 
       />
 
       {/* Main Image Placeholder */}
-      <div className="bg-neutral-800 h-64 md:h-80 rounded-xl flex items-center justify-center text-neutral-500 font-mono text-xs mb-10 border border-neutral-800">
+      <div className="bg-neutral-800 h-64 md:h-80 rounded-xl flex items-center justify-center text-neutral-500 font-mono text-xs my-16 border border-neutral-800">
         [ Cover Image Placeholder ]
       </div>
 

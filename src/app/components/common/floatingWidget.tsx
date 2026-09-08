@@ -406,7 +406,7 @@ export default function FloatingSupportWidget() {
               {/* Footer Location Info */}
               <div className="flex items-center gap-2 text-neutral-400 text-[10px]">
                 <LocationOnIcon style={{ fontSize: 14 }} />
-                <span>Qurancademy Online Quran Academy Operations</span>
+                <span>Qurancademy Online.</span>
               </div>
             </div>
           )}

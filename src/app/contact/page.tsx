@@ -153,7 +153,7 @@ export default function ContactPage() {
               <span>Headquarters</span>
             </div>
             <p className="text-neutral-400 text-xs leading-relaxed">
-              Qurancademy Online Quran Academy, Pakistan & Global Distance Learning Operations.
+              Qurancademy, Pakistan & Global Distance Learning Operations.
             </p>
           </div>
 
