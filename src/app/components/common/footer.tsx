@@ -91,9 +91,9 @@ export default function Footer() {
         <div className="pt-8 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between text-xs text-neutral-500 gap-4">
           <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
           <div className="flex items-center gap-4">
-            <span className="hover:text-neutral-400 cursor-pointer">Privacy Policy</span>
+            <Link href="/privacy" className="hover:text-neutral-400 cursor-pointer">Privacy Policy</Link>
             <span>•</span>
-            <span className="hover:text-neutral-400 cursor-pointer">Terms of Service</span>
+            <Link href="/terms" className="hover:text-neutral-400 cursor-pointer">Terms of Service</Link>
           </div>
         </div>
 
