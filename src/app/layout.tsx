@@ -7,6 +7,7 @@ import ConditionalReviewsSlider from "./components/common/conditionalReviewsSlid
 import FloatingSupportWidget from "./components/common/floatingWidget";
 import BookLoader from "./components/common/bookLoader";
 import IslamicAmbientBackground from "./components/common/islamicAmbientBackground";
+import CustomCursor from "./components/common/customCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +35,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-transparent text-neutral-100">
+        <CustomCursor />
         <BookLoader />
         <IslamicAmbientBackground />
         <Header />
