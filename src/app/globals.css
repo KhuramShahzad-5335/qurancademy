@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+
+
+/* Splash screen styles */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(18px); }
   to { opacity: 1; transform: translateY(0); }
@@ -101,20 +104,26 @@
 }
 
 @keyframes motif-drift {
-  0%, 100% { transform: translateY(0) rotate(-3deg); }
-  50% { transform: translateY(12px) rotate(3deg); }
+  0%, 100% { transform: translateY(0) rotate(-9deg); }
+  80% { transform: translateY(12px) rotate(9deg); }
 }
 
+
+
+/* Hero section styles */
 @keyframes hero-glow {
   0%, 100% { opacity: 0.55; transform: scale(0.96); }
   50% { opacity: 0.9; transform: scale(1.04); }
 }
 
+/* Ambient background styles */
+
 .ambient-background {
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: 0;
   overflow: hidden;
+  min-height: 100%;
   background: #07100e; 
   pointer-events: none;
 }
@@ -138,12 +147,21 @@
 
 .ambient-motif {
   position: absolute;
+  top: var(--motif-top);
   display: grid;
   justify-items: center;
   color: rgba(226, 190, 96, 0.18);
   font-family: Georgia, serif;
-  font-size: clamp(2.2rem, 4vw, 4.5rem);
-  animation: motif-drift 8s ease-in-out infinite;
+  font-size: var(--motif-size);
+  animation: motif-drift var(--motif-duration) ease-in-out var(--motif-delay) infinite;
+}
+
+.ambient-motif--left {
+  left: var(--motif-edge);
+}
+
+.ambient-motif--right {
+  right: var(--motif-edge);
 }
 
 .ambient-motif i {
@@ -154,20 +172,83 @@
   background: linear-gradient(to bottom, rgba(226, 190, 96, 0.3), rgba(226, 190, 96, 0.04));
 }
 
-.ambient-motif--one { top: -1rem; left: 8%; }
-.ambient-motif--two { top: 8%; right: 18%; animation-delay: -2s; }
-.ambient-motif--three { top: 42%; left: 3%; animation-delay: -5s; }
-.ambient-motif--four { top: 54%; right: 7%; animation-delay: -3s; }
-.ambient-motif--five { top: 78%; left: 20%; font-size: 2rem; animation-delay: -7s; }
-.ambient-motif--six { top: 84%; right: 25%; font-size: 2.5rem; animation-delay: -1s; }
+.ambient-motif__glyph {
+  display: block;
+}
+
+.ambient-motif--lantern .ambient-motif__glyph {
+  position: relative;
+  width: 0.7em;
+  height: 0.82em;
+  border: 1px solid currentColor;
+  border-radius: 0.12em 0.12em 0.24em 0.24em;
+  background: rgba(226, 190, 96, 0.08);
+  box-shadow: 0 0 1.2em rgba(226, 190, 96, 0.22);
+  font-size: 0;
+}
+
+.ambient-motif--lantern .ambient-motif__glyph::before,
+.ambient-motif--lantern .ambient-motif__glyph::after {
+  position: absolute;
+  left: 50%;
+  content: "";
+  transform: translateX(-50%);
+}
+
+.ambient-motif--lantern .ambient-motif__glyph::before {
+  top: -0.2em;
+  width: 0.34em;
+  height: 0.14em;
+  border: 1px solid currentColor;
+  border-bottom: 0;
+}
+
+.ambient-motif--lantern .ambient-motif__glyph::after {
+  top: 0.2em;
+  width: 0.18em;
+  height: 0.42em;
+  border-inline: 1px solid currentColor;
+  background: rgba(244, 213, 123, 0.2);
+}
+
+.ambient-motif--candle .ambient-motif__glyph {
+  position: relative;
+  width: 0.34em;
+  height: 0.8em;
+  border: 1px solid currentColor;
+  border-radius: 0.08em 0.08em 0.02em 0.02em;
+  background: rgba(226, 190, 96, 0.1);
+  font-size: 0;
+}
+
+.ambient-motif--candle .ambient-motif__glyph::before {
+  position: absolute;
+  top: -0.42em;
+  left: 50%;
+  width: 0.25em;
+  height: 0.38em;
+  border: 1px solid currentColor;
+  border-radius: 70% 30% 70% 30%;
+  background: rgba(244, 213, 123, 0.45);
+  content: "";
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.ambient-motif--arch .ambient-motif__glyph {
+  width: 0.9em;
+  height: 0.72em;
+  border: 1px solid currentColor;
+  border-bottom: 0;
+  border-radius: 50% 50% 0 0;
+  box-shadow: inset 0.18em 0 rgba(226, 190, 96, 0.06), inset -0.18em 0 rgba(226, 190, 96, 0.06);
+  font-size: 0;
+}
 
 .site-page-hero {
   position: relative;
   isolation: isolate;
   min-height: min(calc(100svh-76px), 100vh);
-  /* margin-inline: calc(50% - 50vw); */
   overflow: hidden;
-  /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
   background: transparent;
   color: white;
 }
@@ -176,7 +257,6 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  /* background: radial-gradient(circle at 78% 48%, rgba(16, 185, 129, 0.18), transparent 25%), radial-gradient(circle at 14% 90%, rgba(45, 212, 191, 0.08), transparent 25%); */
 }
 
 .site-page-hero__wash::after {
@@ -227,6 +307,7 @@
 
 @layer base {
   body {
+    position: relative;
     @apply text-neutral-100 antialiased selection:bg-neutral-100 selection:text-neutral-900;
     background: transparent;
   }

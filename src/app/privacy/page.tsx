@@ -17,7 +17,7 @@ export default function PrivacyPolicyPage() {
         asideLabel="careful handling"
       />
 
-      <article className="bw-card max-w-4xl mx-auto mt-16 p-6 sm:p-10 md:p-12 space-y-10 bg-neutral-900/80 border border-neutral-800 rounded-2xl">
+      <article className="bw-card max-w-6xl mx-auto mt-16 p-6 sm:p-10 md:p-12 space-y-10 bg-neutral-900/80 border border-neutral-800 rounded-2xl">
         <div className="border-b border-neutral-800 pb-6">
           <p className="text-xs font-mono uppercase tracking-widest text-emerald-400">Last updated: September 8, 2026</p>
           <p className="mt-4 text-sm leading-7 text-neutral-400">
