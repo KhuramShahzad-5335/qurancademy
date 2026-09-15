@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { siteConfig } from '@/app/content/site.config';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // MUI Icons
 import MenuIcon from '@mui/icons-material/Menu';
@@ -24,7 +25,9 @@ export default function Header() {
           className="group flex items-center gap-3 text-xl font-bold tracking-tight text-white"
           onClick={closeDrawer}
         >
-          <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-emerald-300/30 bg-emerald-300 text-sm font-black text-[#07100e] shadow-[0_0_30px_rgba(52,211,153,0.28)] transition-transform group-hover:rotate-6">QA</span>
+          <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-emerald-300/30 bg-emerald-300 text-sm font-black text-[#07100e] shadow-[0_0_30px_rgba(52,211,153,0.28)] transition-transform group-hover:rotate-6">
+            <Image src = "icon.png" alt="ghjk" width={30} height={30}/>
+            </span>
           <span>Qurancademy<span className="text-emerald-300">.</span></span>
         </Link>
 
