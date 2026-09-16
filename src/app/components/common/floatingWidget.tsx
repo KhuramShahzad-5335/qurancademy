@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { siteConfig } from "@/app/content/site.config";
+import { reportContactConversion } from "./googleAds";
 
 // Icons (Importing standard MUI icons as used in your codebase)
 import ChatIcon from "@mui/icons-material/Chat";
@@ -68,6 +69,7 @@ export default function FloatingSupportWidget() {
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    reportContactConversion();
     setSubmitted(true);
   };
 

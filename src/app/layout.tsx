@@ -10,6 +10,9 @@ import IslamicAmbientBackground from "./components/common/islamicAmbientBackgrou
 import CustomCursor from "./components/common/customCursor";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import Script from "next/script";
+
+const googleAdsId = "AW-18438605125";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +39,18 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${googleAdsId}`}
+        strategy="afterInteractive"
+      />
+      <Script id="google-ads-tag" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${googleAdsId}');
+        `}
+      </Script>
       <body className="min-h-full flex flex-col bg-transparent text-neutral-100">
         <SpeedInsights />
         <Analytics />

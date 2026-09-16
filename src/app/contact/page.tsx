@@ -13,6 +13,7 @@ import PublicIcon from '@mui/icons-material/Public';
 import { siteConfig } from '../content/site.config';
 import GoogleMap from '../components/contact/locationMap';
 import PageHero from "../components/common/pageHero";
+import { reportContactConversion } from "../components/common/googleAds";
 
 interface ContactFormData {
   fullName: string;
@@ -57,6 +58,7 @@ export default function ContactPage() {
     submissions.push(newSubmission);
     localStorage.setItem('etutors_contact_submissions', JSON.stringify(submissions));
 
+    reportContactConversion();
     setSubmitted(true);
     setFormData({
       fullName: '',
