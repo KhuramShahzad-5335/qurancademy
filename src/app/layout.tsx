@@ -18,15 +18,15 @@ export const metadata: Metadata = {
   title: "Qurancademy",
   description: siteConfig.tagline,
   robots: { index: true, follow: true },
-  other: { "theme-color": "#121113" },
+  other: { "theme-color": "#04151f" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const analyticsEnabled = process.env.NEXT_PUBLIC_ENABLE_ANALYTICS === "true";
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">
-        <a href="#main-content" className="skip-link">Skip to content</a>
+      <body className="min-h-full flex flex-col font-sans antialiased">
+        <a href="#main-content" className="fixed top-2.5 left-2.5 z-[300] -translate-y-[160%] rounded-lg bg-blue-bell-200 px-[18px] py-3 font-bold text-blue-bell-900 focus:translate-y-0">Skip to content</a>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({
           "@context": "https://schema.org", "@type": "EducationalOrganization",
           "@id": `${siteUrl}/#organization`, name: siteConfig.name, url: siteUrl,

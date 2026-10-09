@@ -20,6 +20,14 @@ Windows may require permission for a local preview socket. Serve or deploy the c
 
 The contact page and help panel use the same enquiry component. It prepares a draft, then lets the visitor review and send it in WhatsApp. It does not send, store or confirm delivery of an enquiry. No names, phone numbers or messages are recorded as analytics events.
 
+## Styling
+
+Use Tailwind utilities in page and component markup for layout, spacing, colors, responsive states and interactions. Reuse the components in `src/app/components/story/` for buttons, sections, cards and headings instead of copying their markup.
+
+Keep `src/app/globals.css` limited to Tailwind theme tokens, site-wide accessibility defaults, repeated editorial typography and rich article formatting, plus shared animation keyframes and reveal states. The Blue Bell palette is available as `blue-bell-50` through `blue-bell-950`; section components set inherited text and action colors for light and dark surfaces. Keep utility class names complete and literal so Tailwind can detect them at build time.
+
+Landing-page sections live in `src/app/components/story/landingSections.tsx`; their content lives in `src/app/content/landing.ts`. The landing FAQs reuse the full FAQ page's answers. `ReviewGallery` accepts an approved `Review[]` through its `reviews` prop, ready for a future feedback feature. For now it uses `siteConfig.reviews`, showing conversation prompts while that list is empty. Add only genuine reviews with publication permission. The share-experience link opens the existing WhatsApp contact; there is no automatic review submission, storage or publication.
+
 ## Optional configuration
 
 Set build-time variables only when appropriate:

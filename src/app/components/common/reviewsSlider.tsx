@@ -81,7 +81,7 @@ export default function ReviewsSlider({
       </div>
 
       {/* Main Review Card Container - Fixed Dimensions to eliminate layout shift */}
-      <div className="relative bw-card p-6 md:p-10 bg-neutral-900/50 border border-neutral-800/80 rounded-3xl backdrop-blur flex flex-col justify-between min-h-[380px] sm:min-h-[340px]">
+      <div className="relative rounded-[10px] border border-[var(--line)] bg-blue-bell-800 p-6 md:p-10 bg-neutral-900/50 border border-neutral-800/80 rounded-3xl backdrop-blur flex flex-col justify-between min-h-[380px] sm:min-h-[340px]">
         
         {/* Background Quote Watermark */}
         <div className="absolute top-6 right-6 text-neutral-800/40 pointer-events-none">

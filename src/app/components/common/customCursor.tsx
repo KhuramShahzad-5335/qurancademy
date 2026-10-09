@@ -73,7 +73,7 @@ export default function CustomCursor() {
 
       {/* Modern Outer Ring */}
       <motion.div
-        className=" index-50 hidden lg:fixed top-0 left-0 rounded-full pointer-events-none z-50 border border-emerald-500/50 bg-emerald-500/10 backdrop-blur-[0px]"
+        className="index-50 hidden lg:fixed top-0 left-0 rounded-full pointer-events-none z-50 border border-emerald-500/50 bg-emerald-500/10 backdrop-blur-[0px]"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,

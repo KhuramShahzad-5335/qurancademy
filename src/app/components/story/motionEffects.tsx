@@ -55,5 +55,5 @@ export default function MotionEffects() {
     };
   }, [pathname]);
 
-  return <div ref={progress} className="reading-progress" aria-hidden="true" />;
+  return <div ref={progress} style={{ transform: "scaleX(0)" }} className="pointer-events-none fixed top-0 left-0 z-100 h-[3px] w-full origin-left bg-blue-bell-200" aria-hidden="true" />;
 }

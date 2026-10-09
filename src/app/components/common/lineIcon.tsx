@@ -16,7 +16,7 @@ const paths = {
 
 export default function LineIcon({ kind, className = "" }: LineIconProps) {
   return (
-    <svg className={`line-icon ${className}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.35" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg className={`size-6 shrink-0 ${className}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.35" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       {paths[kind]}
     </svg>
   );
