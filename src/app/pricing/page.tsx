@@ -1,0 +1,12 @@
+import Link from "next/link";
+import PageHero from "../components/common/pageHero";
+import { pageMetadata } from "@/lib/seo";
+import { whatsappUrl } from "@/lib/contact";
+
+export const metadata = pageMetadata("Quran Class Fees and Free Trial Questions", "Request a quote for your Quran course and lesson schedule. Check lesson length, currency, payment and cancellation terms before booking.", "/pricing");
+
+const questions = ["What is the total price in my currency, including any payment charges?", "How long is each lesson and how many lessons are included?", "Which teacher and teaching language are available for my requested times?", "What does the free trial include, and when is it confirmed?", "When is payment due, and what are the cancellation or refund arrangements?", "What happens if a teacher or learner needs to reschedule?"];
+
+export default function PricingPage() {
+  return <main className="mx-auto max-w-5xl space-y-10 px-4 py-16"><PageHero eyebrow="Plan before you book" title="Clear questions about class fees" description="Regular lesson fees are agreed before you start. Request a quote for your course, lesson length and weekly schedule; we have not published prices that are still unconfirmed." asideValue="Free" asideLabel="trial enquiry" /><section className="bw-card p-8"><h2 className="text-2xl font-bold">Ask for a written quote</h2><p className="mt-4 text-neutral-300 leading-8">Share your preferred course, the learner’s starting level, city or time zone, and the days you are considering. Agree the total cost and terms before paying. A free trial enquiry does not commit you to regular lessons.</p><a href={whatsappUrl("Assalamu Alaikum! Please send me a written quote for Quran lessons, including lesson length, weekly frequency, currency, total fees, trial details and cancellation terms.")} target="_blank" rel="noopener noreferrer" className="bw-button-primary mt-6">Request fees on WhatsApp →</a></section><section className="bw-card p-8"><h2 className="text-2xl font-bold">Your booking checklist</h2><ul className="mt-5 list-disc space-y-4 pl-5 text-neutral-300">{questions.map(question => <li key={question}>{question}</li>)}</ul></section><p className="text-neutral-300">Choose a <Link href="/courses" className="text-emerald-300 underline">course</Link>, prepare an <Link href="/contact" className="text-emerald-300 underline">enquiry</Link>, or read our <Link href="/terms" className="text-emerald-300 underline">terms</Link>.</p></main>;
+}

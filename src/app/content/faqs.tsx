@@ -1,51 +1,13 @@
-export interface FAQItem {
-  id: string;
-  category: string;
-  question: string;
-  answer: string;
-}
+export interface FAQItem { id: string; category: string; question: string; answer: string; }
 
 export const faqsData: FAQItem[] = [
-  {
-    id: "1",
-    category: "General & Classes",
-    question: "How are online Quran classes conducted?",
-    answer: "All classes are conducted live and 1-on-1 via Zoom, Skype, or WhatsApp video call. You can join your sessions from any device — laptop, tablet, or smartphone — from anywhere in the world."
-  },
-  {
-    id: "2",
-    category: "General & Classes",
-    question: "Is the first demo class really free?",
-    answer: "Yes, absolutely. Every student gets a complimentary 1-on-1 demo trial session with an assigned teacher. This allows you to evaluate the teaching style and fit before making any commitment."
-  },
-  {
-    id: "3",
-    category: "Teachers & Staff",
-    question: "Do you have female Quran teachers for female students and kids?",
-    answer: "Yes, we have a dedicated team of certified Female Aalima and Qariyah staff available for sisters and young children, as well as qualified Male Qari and Hafiz teachers."
-  },
-  {
-    id: "4",
-    category: "Courses & Levels",
-    question: "Which courses do you offer for complete beginners?",
-    answer: "For beginners and young kids, we start with the Noorani Qaida course. It builds a solid foundation in Arabic letters, vowel marks (Harakaat), and basic pronunciation rules (Makharij) before moving to Quran Nazra."
-  },
-  {
-    id: "5",
-    category: "Courses & Levels",
-    question: "Can I enroll in online Hifz (Quran Memorization)?",
-    answer: "Yes. Our online Hifz program follows a structured daily system: Sabaq (new daily lesson), Sabqi (recent revisions), and Manzil (older Juz revision) to ensure retention with proper Tajweed."
-  },
-  {
-    id: "6",
-    category: "Schedules & Fees",
-    question: "What are the class timings and days?",
-    answer: "We offer 24/7 flexible scheduling. You can choose specific days and time slots that fit your daily schedule, school hours, or international time zone."
-  },
-  {
-    id: "7",
-    category: "Schedules & Fees",
-    question: "How do I register or discuss fee packages?",
-    answer: "You can click any 'Chat on WhatsApp' button on our website to message us directly. We will provide full details on flexible monthly packages and schedule your free demo class within 24 hours."
-  }
+  { id: "1", category: "General & Classes", question: "How do online Quran lessons work?", answer: "Lessons are arranged one-on-one with a teacher. Before booking, agree the video platform, teaching language, lesson length and resources. You will need a device, usable internet and clear audio." },
+  { id: "2", category: "General & Classes", question: "How do I request a free trial?", answer: "Message us on WhatsApp to request a free trial. Agree the date, teacher and trial details before joining. Requesting a trial is not a confirmed booking or a commitment to regular lessons." },
+  { id: "3", category: "Teachers & Staff", question: "Can I request a male or female teacher?", answer: "Include your preference in your enquiry. We will discuss available teachers and a suitable match. Ask about the proposed teacher's qualifications, experience and teaching language before you decide." },
+  { id: "4", category: "Courses & Levels", question: "Where should a complete beginner start?", answer: "Ask about Noorani Qaida and a starting-level assessment. A teacher can help decide whether to begin with recognising letters, combining sounds or practising connected reading. Adults and children may need different pacing." },
+  { id: "5", category: "Courses & Levels", question: "Can we discuss Quran memorization?", answer: "Yes. Ask about the Hifz course and the time available for revision as well as new learning. The teacher should assess reading readiness and agree manageable goals; no fixed completion time is promised." },
+  { id: "6", category: "Schedules & Fees", question: "Are lessons available around UK, US and Canadian school hours?", answer: "Share your city or time zone, preferred days and local times. Teacher availability needs to be confirmed. Check time changes when daylight saving begins or ends; a requested time is not a guaranteed slot." },
+  { id: "7", category: "Schedules & Fees", question: "How much do lessons cost?", answer: "Ask for a written quote for your chosen course, lesson length and weekly frequency. Confirm the currency, total price, payment timing and cancellation terms before regular lessons begin. We do not publish unconfirmed prices." },
+  { id: "8", category: "General & Classes", question: "Has the website sent my enquiry?", answer: "The enquiry form prepares a WhatsApp draft. You must review it and press Send in WhatsApp. The website cannot confirm delivery or a booking and does not save your form details." },
+  { id: "9", category: "Teachers & Staff", question: "What should a parent check before a lesson?", answer: "Speak with the proposed teacher, ask about relevant qualifications and teaching experience, agree communication through the parent and discuss recording and lesson supervision. Read the parent guidance page and raise concerns through our published WhatsApp contact." },
 ];

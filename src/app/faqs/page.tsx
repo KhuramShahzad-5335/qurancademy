@@ -1,44 +1,11 @@
 import FAQAccordion from "../components/faq/faqAccordion";
 import { faqsData } from "../content/faqs";
-import { siteConfig } from "../content/site.config";
 import PageHero from "../components/common/pageHero";
+import Link from "next/link";
+import { pageMetadata } from "@/lib/seo";
 
-
-export const metadata = {
-  title: "Frequently Asked Questions | Qurancademy",
-  description: "Find answers about our 1-on-1 online Quran classes, teachers, and scheduling.",
-};
+export const metadata = pageMetadata("Online Quran Classes: Frequently Asked Questions", "Answers about choosing a course, requesting a free trial, teacher preferences, lesson times, fees and sending an enquiry.", "/faqs");
 
 export default function FAQsPage() {
-  return (
-    <main className="min-h-screen py-16 px-4 max-w-4xl mx-auto">
-      <PageHero
-        eyebrow="Help & Support"
-        title="Frequently Asked Questions"
-        description="Everything you need to know about starting online Quran classes, booking free demos, and scheduling sessions."
-        asideValue="1:1"
-        asideLabel="clear answers"
-      />
-
-      <section className="my-16">
-        <FAQAccordion faqs={faqsData} />
-      </section>
-
-      <section className="bw-card text-center p-10 bg-neutral-900 border border-neutral-800">
-        <h3 className="text-2xl font-bold text-white">Have More Questions?</h3>
-        <p className="text-neutral-400 text-sm mt-2 max-w-md mx-auto">
-          Message us directly on WhatsApp to get immediate assistance regarding class timings or teacher availability.
-        </p>
-        <a
-          href={`${siteConfig
-              .whatsappLink}&text=${encodeURIComponent("Assalamu Alaikum! I have a question about your Quran classes.")}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bw-button-primary mt-6 inline-flex"
-        >
-          Ask Us on WhatsApp →
-        </a>
-      </section>
-    </main>
-  );
+  return <main className="mx-auto max-w-4xl space-y-12 px-4 py-16"><PageHero eyebrow="Help and support" title="Your questions, answered" description="A clear starting point for courses, trials and lesson planning. Ask us about anything specific to your family before booking." asideValue="1:1" asideLabel="personal planning" /><FAQAccordion faqs={faqsData} /><p className="text-neutral-300">Still have a question? <Link href="/contact" className="text-emerald-300 underline">Prepare an enquiry</Link> or read our <Link href="/pricing" className="text-emerald-300 underline">fee checklist</Link>.</p></main>;
 }

@@ -1,79 +1,10 @@
+import Link from "next/link";
 import PageHero from "../components/common/pageHero";
 import { siteConfig } from "../content/site.config";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Privacy Policy | Qurancademy",
-  description: "How Qurancademy collects, uses, and protects information for online Quran learning.",
-};
+export const metadata = pageMetadata("Privacy and Your Enquiry", "How the Qurancademy website handles enquiry drafts, WhatsApp contact and optional analytics. Guidance for parents sharing information.", "/privacy");
 
-export default function PrivacyPolicyPage() {
-  return (
-    <main className="min-h-screen px-4 py-16">
-      <PageHero
-        eyebrow="Qurancademy Policies"
-        title="Privacy Policy"
-        description="How we handle the information shared when you explore Qurancademy, book a demo, or arrange online lessons."
-        asideValue="100%"
-        asideLabel="careful handling"
-      />
-
-      <article className="bw-card max-w-6xl mx-auto mt-16 p-6 sm:p-10 md:p-12 space-y-10 bg-neutral-900/80 border border-neutral-800 rounded-2xl">
-        <div className="border-b border-neutral-800 pb-6">
-          <p className="text-xs font-mono uppercase tracking-widest text-emerald-400">Last updated: September 8, 2026</p>
-          <p className="mt-4 text-sm leading-7 text-neutral-400">
-            This policy explains what we collect, why we need it, and the choices available to students and parents using Qurancademy.
-          </p>
-        </div>
-
-        <section>
-          <h2 className="text-xl font-semibold text-white">1. Information you share with us</h2>
-          <p className="mt-3 text-sm leading-7 text-neutral-400">
-            When you contact us or request a demo, you may share your name, email address, WhatsApp or phone number, country or time zone, the learner&apos;s age and current level, preferred teacher, and course interests. We only request payment or billing information when it is needed for an agreed service, and we do not ask you to send passwords or sensitive account credentials through WhatsApp.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-semibold text-white">2. Information collected when you browse</h2>
-          <p className="mt-3 text-sm leading-7 text-neutral-400">
-            Our hosting and service providers may receive basic technical information such as browser type, device information, approximate location, pages visited, and access times. This helps us keep the website secure, understand which pages are useful, and improve the Qurancademy experience. We do not use this information to identify you personally unless needed to protect the service.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-semibold text-white">3. How we use information</h2>
-          <p className="mt-3 text-sm leading-7 text-neutral-400">
-            We use information to respond to enquiries, arrange free demos, match learners with suitable male or female teachers, coordinate class times, provide learning updates to a parent or guardian, send service messages, and maintain the safety and reliability of our website. We do not sell personal information.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-semibold text-white">4. Children and parent or guardian consent</h2>
-          <p className="mt-3 text-sm leading-7 text-neutral-400">
-            Qurancademy welcomes young learners, but a parent or legal guardian should make enquiries, provide consent, and supervise the child&apos;s account and communications. We do not knowingly collect information directly from a child without appropriate parent or guardian involvement. Please contact us if you believe a child has shared information without consent.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-semibold text-white">5. Sharing and protecting information</h2>
-          <p className="mt-3 text-sm leading-7 text-neutral-400">
-            We share information only with people and providers who need it to deliver the requested service, such as an assigned teacher, hosting provider, communication platform, or payment provider. We use reasonable administrative and technical safeguards, but no internet transmission or storage system can be guaranteed completely secure.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-semibold text-white">6. Your choices</h2>
-          <p className="mt-3 text-sm leading-7 text-neutral-400">
-            You may ask what personal information we hold about you, request a correction, ask us to delete information we no longer need, or withdraw from non-essential messages. Some records may need to be retained for service, safety, or legal reasons. We may also rely on third-party privacy settings for WhatsApp, email, video, hosting, and payment services.
-          </p>
-        </section>
-
-        <section className="border-t border-neutral-800 pt-8">
-          <h2 className="text-xl font-semibold text-white">Contact us about privacy</h2>
-          <p className="mt-3 text-sm leading-7 text-neutral-400">
-            For a privacy question or request, email <a className="text-emerald-300 underline underline-offset-4 hover:text-white" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a> and include enough detail for us to locate your enquiry.
-          </p>
-        </section>
-      </article>
-    </main>
-  );
+export default function PrivacyPage() {
+  return <main className="mx-auto max-w-5xl space-y-10 px-4 py-16"><PageHero eyebrow="Privacy" title="Your enquiry stays in your hands" description="Know what happens to the information you enter before you choose to share it." asideValue="You" asideLabel="choose to send" /><article className="bw-card space-y-8 p-8 text-neutral-300 leading-8"><p className="text-sm text-neutral-400">Updated 9 October 2026</p><section><h2 className="text-xl font-bold text-white">Enquiry drafts on this website</h2><p className="mt-3">The form prepares a message in your current browser page. It does not submit the details to a website database, send an email, or save them in local storage. Closing or refreshing the page clears the draft. You can copy the message or open it in WhatsApp.</p></section><section><h2 className="text-xl font-bold text-white">When you choose WhatsApp</h2><p className="mt-3">The WhatsApp link contains your prepared message so WhatsApp can display it as a draft. Opening the link shares that URL with WhatsApp and may leave it in your browser history. You must press Send there to send the message to Qurancademy. WhatsApp operates under its own privacy terms; we cannot confirm delivery from this website.</p><p className="mt-3">Share only what is needed to discuss a course and schedule. Do not put passwords, payment credentials, private documents or sensitive details about a child into the draft.</p></section><section><h2 className="text-xl font-bold text-white">After you contact us</h2><p className="mt-3">Messages you send through WhatsApp or another agreed channel are used to discuss your enquiry and arrange lessons. Contact us through the published number to ask about access, correction or deletion of information you have shared. The communication provider may keep records under its own terms.</p></section><section><h2 className="text-xl font-bold text-white">Hosting and optional measurement</h2><p className="mt-3">Our hosting provider may process technical request information to serve this website. Website analytics and performance monitoring are off by default in this version. If the site operator enables the existing Vercel monitoring tools, they can measure page visits and performance; form names and message text are not sent as custom events. This version does not load Google Ads or AdSense tags.</p></section><section><h2 className="text-xl font-bold text-white">Parents and guardians</h2><p className="mt-3">A parent or guardian should make enquiries for a child and decide what information is appropriate to share. Avoid including the child’s full name, school, home address or other identifying details in an initial enquiry. Read our <Link href="/safety" className="text-emerald-300 underline">parent guidance</Link> before booking.</p></section><section><h2 className="text-xl font-bold text-white">Questions about information you shared?</h2><p className="mt-3"><a href={siteConfig.whatsappLink} target="_blank" rel="noopener noreferrer" className="text-emerald-300 underline">Contact Qurancademy on WhatsApp</a> and ask how to share your request privately. {siteConfig.email && <a href={`mailto:${siteConfig.email}`} className="text-emerald-300 underline">You can also email us.</a>}</p></section></article></main>;
 }

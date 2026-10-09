@@ -1,0 +1,89 @@
+%% Qurancademy implementation roadmap - reviewed 2026-10-09
+%% Updated for the free-only implementation. See implementation-progress.md for completed work and verification.
+%% The current MVP uses a visitor-sent WhatsApp draft; no provider, database or paid domain was introduced.
+%% Read alongside qurancademy-proposal-review.md for evidence, owners and acceptance checks.
+%% Planning only: no purchase, deployment, account change or application is authorized by this file.
+%% Estimates assume one developer and timely owner/teacher input. Progress depends on gates, not dates.
+%% Priority: delivered enquiries and enrolments first; advertising is optional later.
+flowchart TD
+    START["START: preserve current work and record baseline"]
+
+    subgraph P0["Phase 0 - repair readiness and choose lead delivery - 2 to 4 working days"]
+        A0["Inventory routes, missing imports and dependencies<br/>Preserve untracked auth work; keep login out of MVP"]
+        A1["Agree MVP: parent enquiries and free trial bookings<br/>Record real contact, trial, teacher and schedule facts"]
+        A2{"Choose lead delivery architecture"}
+        A3["Free MVP using only existing tools<br/>Keep static export and prepare a WhatsApp draft<br/>Visitor reviews and sends; website does not claim delivery"]
+        A4["Custom backend if justified<br/>Remove static export; deploy server-capable Next.js<br/>Add lead endpoint, database and delivery notification"]
+        A5["Use one shared enquiry draft in contact and help<br/>Labels, length limits and a copy fallback<br/>Clearly state that the draft has not been sent"]
+        A6["Fix logo URL, duplicate WhatsApp text parameters<br/>Remove fixed splash delay; accessible navigation and forms<br/>Handle corrupt browser storage; remove local-only lead storage"]
+        G0{"Gate 0<br/>Build, lint and generated-page checks pass<br/>Draft URLs encode correctly; no false receipt or conversions<br/>Owner verifies WhatsApp receipt and browser interactions"}
+    end
+
+    subgraph P1["Phase 1 - trust, offer and positioning - 2 to 4 working days"]
+        B0["Owner confirms prices, trial duration and actual teaching hours<br/>Verify clear English and UK / US / Canada availability<br/>Check daylight saving changes; retain truthful Pakistan identity"]
+        B1["Replace placeholder email and unsupported numbers<br/>Confirm credentials and reviews with evidence and consent<br/>Remove unverifiable claims and verified badges"]
+        B2["Update homepage, About, FAQ, contact and support copy<br/>Parent-focused headline and consistent course names<br/>Publish pricing, real teacher bios and actual safeguarding practices"]
+        B3["Label keyword helper accurately or remove it<br/>One source of truth for trial, courses, prices and contact<br/>Update privacy text to match storage and tracking"]
+        G1{"Gate 1<br/>Owner verifies every business claim<br/>All contact paths and trial terms agree; no fabricated credentials"}
+    end
+
+    subgraph P2["Phase 2 - SEO foundation and trustworthy measurement - 2 to 3 working days"]
+        C0["Use the existing free Vercel URL<br/>qurancademy.vercel.app is the canonical host<br/>No domain purchase or new account required"]
+        C1["Add route-specific titles, descriptions and canonicals<br/>Generate sitemap.xml and robots.txt from public routes<br/>Keep metadata routes compatible with chosen hosting mode"]
+        C2["Add Open Graph preview image and metadata<br/>Truthful EducationalOrganization and BlogPosting JSON-LD<br/>Use real authors and dates; do not add fake review ratings"]
+        C3["Keep Vercel monitoring available but off by default<br/>Remove misleading Ads conversions and advertising tags<br/>Confirm free allowance and setup before enabling monitoring"]
+        C4["Verify Search Console and submit sitemap<br/>Inspect production HTML, indexing and social previews<br/>Measure mobile speed and check unknown blog URLs"]
+        G2{"Gate 2<br/>Canonical URLs, sitemap, schema and exported links validate<br/>No draft is counted as a delivered lead<br/>After deployment, owner verifies indexing and HTTP status"}
+    end
+
+    subgraph P3["Phase 3 - service pages and reviewed content - initial 4 to 6 weeks"]
+        D0["Research parent questions and search intent<br/>Prioritize real courses and initial audience<br/>Avoid duplicate country pages with only place names changed"]
+        D1["Create useful course pages<br/>Age and level, outcomes, lesson format, schedule and price<br/>Link to free trial and related parent guidance"]
+        D2["Extend blog model for sections, author and reviewer bios<br/>Real publication and update dates; licensed images and alt text<br/>Related content, breadcrumbs and internal links"]
+        D3["Rewrite the three thin posts first<br/>Then publish 1 to 2 teacher-reviewed guides per week<br/>Answer fully; no mandatory word count or invented expertise"]
+        G3{"Gate 3 for each article<br/>Teacher approves accuracy; author and image rights verified<br/>Useful original guidance, links and mobile layout checked"}
+        D4["Publish reviewed batches and inspect indexing<br/>Use enquiries and Search Console to choose next topics<br/>Aim for 15 to 20 only if quality and capacity support it"]
+    end
+
+    subgraph P4["Phase 4 - optional blog advertising - readiness-based, after useful traffic"]
+        E0{"Do blog ads support the business<br/>without harming trial bookings or trust?"}
+        E1["Assess site against current AdSense eligibility<br/>Original content, usable navigation and site control<br/>Review child-directed treatment and certified CMP requirements"]
+        E2{"Gate 4<br/>Policies and consent verified; owner approves application<br/>Content is ready independent of article count or calendar"}
+        E3["Apply for AdSense; approval and revenue are not guaranteed<br/>If approved, use restrained blog-only placements<br/>Reserve ad space; verify policy settings and ads.txt instructions"]
+        E4["Compare revenue with reading experience and enquiries<br/>Reduce or remove ads if business outcomes worsen"]
+        E5["Continue content and bookings without ads"]
+    end
+
+    subgraph P5["Ongoing - weekly lead checks and monthly growth review"]
+        F0["Check delivery failures and spam weekly<br/>Review response time, trial bookings and enrolments"]
+        F1["Review search queries, indexing and useful content monthly<br/>Collect genuine reviews with consent; seek relevant partnerships<br/>Update outdated guidance and measure cost per enrolled student"]
+    end
+
+    START --> A0 --> A1 --> A2
+    A2 -->|"Default: smaller operational burden"| A3
+    A2 -->|"Owner needs custom workflows"| A4
+    A3 --> A5
+    A4 --> A5
+    A5 --> A6 --> G0
+    G0 -->|"Fail: repair and retest"| A5
+    G0 -->|"Pass"| B0 --> B1 --> B2 --> B3 --> G1
+    G1 -->|"Unconfirmed: remove claim or obtain evidence"| B0
+    G1 -->|"Pass"| C0 --> C1 --> C2 --> C3 --> C4 --> G2
+    G2 -->|"Fail: correct implementation"| C1
+    G2 -->|"Pass"| D0 --> D1 --> D2 --> D3 --> G3
+    G3 -->|"Revise"| D3
+    G3 -->|"Pass"| D4 --> E0
+    D4 -.->|"Weekly feedback informs next batch"| D0
+    E0 -->|"Yes"| E1 --> E2
+    E0 -->|"No or not yet"| E5
+    E2 -->|"Not ready"| E5
+    E2 -->|"Ready"| E3 --> E4
+    E4 --> F0
+    E5 --> F0 --> F1
+    F1 -.->|"Improve offer and trust"| B0
+    F1 -.->|"Improve useful content"| D0
+
+    classDef gate fill:#fff3cd,stroke:#9b7500,color:#302500;
+    classDef phase fill:#e7f6ed,stroke:#218050,color:#123c27;
+    class G0,G1,G2,G3,E0,E2,A2 gate;
+    class START,A5,B2,C1,D3,F0,F1 phase;

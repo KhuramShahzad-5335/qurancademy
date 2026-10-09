@@ -3,63 +3,41 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/common/header";
 import Footer from "./components/common/footer";
-import ConditionalReviewsSlider from "./components/common/conditionalReviewsSlider";
 import FloatingSupportWidget from "./components/common/floatingWidget";
-import BookLoader from "./components/common/bookLoader";
 import IslamicAmbientBackground from "./components/common/islamicAmbientBackground";
-import CustomCursor from "./components/common/customCursor";
-import { Analytics } from "@vercel/analytics/next"
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { jsonLd, siteUrl } from "@/lib/seo";
+import { siteConfig } from "./content/site.config";
 
-const googleAdsId = "AW-18438605125";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Qurancademy",
-  description: "Learn Quran Online with Certified Male & Female Teachers",
+  description: siteConfig.tagline,
+  robots: { index: true, follow: true },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const analyticsEnabled = process.env.NEXT_PUBLIC_ENABLE_ANALYTICS === "true";
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${googleAdsId}`}
-        strategy="afterInteractive"
-      />
-      <Script id="google-ads-tag" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${googleAdsId}');
-        `}
-      </Script>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-transparent text-neutral-100">
-        <SpeedInsights />
-        <Analytics />
-        <CustomCursor />
-        <BookLoader />
+        <a href="#main-content" className="skip-link">Skip to content</a>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({
+          "@context": "https://schema.org", "@type": "EducationalOrganization",
+          "@id": `${siteUrl}/#organization`, name: siteConfig.name, url: siteUrl,
+          logo: `${siteUrl}/icon.png`, description: siteConfig.tagline,
+          telephone: siteConfig.whatsappNumber,
+          address: { "@type": "PostalAddress", addressLocality: "Lahore", addressCountry: "PK" },
+          ...(siteConfig.email ? { email: siteConfig.email } : {}),
+        }) }} />
+        {analyticsEnabled && <><Analytics /><SpeedInsights /></>}
         <IslamicAmbientBackground />
         <Header />
-        <div className="relative z-[1] flex-1">{children}</div>
-        <ConditionalReviewsSlider />
+        <div id="main-content" tabIndex={-1} className="relative z-[1] flex-1">{children}</div>
         <Footer />
         <FloatingSupportWidget />
       </body>
