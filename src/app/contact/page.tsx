@@ -3,35 +3,12 @@ import PageHero from "../components/common/pageHero";
 import EnquiryForm from "../components/contact/enquiryForm";
 import { siteConfig } from "../content/site.config";
 import { pageMetadata } from "@/lib/seo";
-
+import { ActionLink, Feature, StorySection } from "../components/story/primitives";
 export const metadata = pageMetadata("Contact Us and Request a Free Trial", "Ask about Quran courses, teacher availability, fees and a free trial. Prepare an enquiry and send it directly through WhatsApp.", "/contact");
-
 export default function ContactPage() {
-  return (
-    <main className="mx-auto w-full max-w-6xl space-y-12 px-4 py-16">
-      <PageHero eyebrow="Talk to us" title="Let’s find the right starting point" description="Ask about a course, request a free trial, or share the times that suit your family. Confirm your teacher, language, schedule and fees before booking." asideValue="1:1" asideLabel="personal learning" />
-      <div className="grid gap-8 lg:grid-cols-2">
-        <section className="space-y-6">
-          <div className="bw-card space-y-4 p-6">
-            <h2 className="text-2xl font-bold">Message Qurancademy</h2>
-            <p className="text-neutral-300 leading-7">Prefer to chat directly? Use our existing WhatsApp contact.</p>
-            <a href={siteConfig.whatsappLink} target="_blank" rel="noopener noreferrer" className="bw-button-primary">Open WhatsApp · {siteConfig.whatsappNumber}</a>
-            {siteConfig.email && <p><a href={`mailto:${siteConfig.email}`} className="text-emerald-300 underline">{siteConfig.email}</a></p>}
-            <p className="text-sm text-neutral-400">Based in {siteConfig.address}. Online lesson availability is agreed with your teacher.</p>
-          </div>
-          <div className="bw-card space-y-3 p-6">
-            <h2 className="text-xl font-bold">Planning around school?</h2>
-            <p className="text-sm leading-7 text-neutral-300">If you are in the UK, US or Canada, include your city, preferred days and local time. We will discuss available options rather than promise a slot before checking.</p>
-            <Link href="/pricing" className="text-emerald-300 underline">What to ask about fees</Link>
-            <p><Link href="/safety" className="text-emerald-300 underline">Parent guidance for online lessons</Link></p>
-          </div>
-        </section>
-        <section className="bw-card p-6 sm:p-8" aria-labelledby="enquiry-heading">
-          <h2 id="enquiry-heading" className="mb-4 text-2xl font-bold">Prepare an enquiry</h2>
-          <EnquiryForm />
-          <p className="mt-5 text-xs text-neutral-400">Read our <Link href="/privacy" className="underline">privacy policy</Link> before sharing information.</p>
-        </section>
-      </div>
-    </main>
-  );
+  return <main className="site-main"><PageHero image="family" eyebrow="Your next chapter starts here" title={<>Let’s find<br /><em>your starting point.</em></>} description="Tell us a little about your learner and what you hope to work towards. Ask about a course, a free trial or a timetable that fits your family." asideValue="A conversation first." asideLabel="The details, agreed together."><div className="hero-actions"><ActionLink href="#enquiry">Prepare an enquiry</ActionLink></div></PageHero>
+    <StorySection theme="paper" id="enquiry"><div className="contact-layout"><div><p className="eyebrow">Hello, Qurancademy</p><h2 className="editorial-title">A little about you.<br /><em>A plan we can discuss.</em></h2><div className="story-prose"><p>Prefer to chat directly? Use our existing WhatsApp contact. We are based in {siteConfig.address}, with lessons arranged online.</p></div><ActionLink href={siteConfig.whatsappLink}>Open WhatsApp</ActionLink><p className="contact-number">{siteConfig.whatsappNumber}</p>{siteConfig.email && <p><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></p>}
+      <div className="contact-note"><Feature icon="clock" title="Plan around your day">Include your city, preferred days and local times. Availability needs to be checked, including daylight saving changes.</Feature><Feature icon="message" title="Agree the details">Ask about your teacher, teaching language, trial, lesson length and full fee before booking.</Feature></div><div className="story-prose"><Link href="/pricing">Fee checklist ↗</Link><br /><Link href="/safety">Parent guidance ↗</Link></div>
+    </div><section className="enquiry-shell" aria-labelledby="enquiry-heading"><p className="eyebrow">01 / Prepare · 02 / Review · 03 / Send</p><h2 id="enquiry-heading">Start the conversation.</h2><EnquiryForm /><p className="form-hint">Read our <Link href="/privacy">privacy policy</Link> before sharing information.</p></section></div></StorySection>
+  </main>;
 }

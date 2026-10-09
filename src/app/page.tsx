@@ -1,39 +1,31 @@
-import Link from "next/link";
+import PageHero from "./components/common/pageHero";
+import LineIcon from "./components/common/lineIcon";
 import { siteConfig } from "./content/site.config";
+import { blogsData } from "./content/blogs";
 import { pageMetadata } from "@/lib/seo";
+import { ActionLink, CallToAction, SectionHeading, StoryImage, StorySection } from "./components/story/primitives";
+import CourseCard from "./components/story/courseCard";
+import JourneySteps from "./components/story/journeySteps";
+import ArticleCard from "./components/story/articleCard";
 
 export const metadata = pageMetadata("Online Quran Classes for Kids and Families", "Explore one-on-one Quran learning, Noorani Qaida, Tajweed and Hifz. Ask about a free trial and lesson times that fit your family.", "/");
-
 export default function HomePage() {
-  return (
-    <main className="home-page text-neutral-100">
-      <section className="home-hero">
-        <div className="home-hero__inner">
-          <div className="home-hero__copy">
-            <p className="eyebrow">Personal learning. A thoughtful start.</p>
-            <h1>Online Quran classes for kids<span> and families.</span></h1>
-            <p className="home-hero__lead">Build a steady learning routine from home with live, one-on-one lessons. Explore a course, discuss your needs and arrange a free trial before deciding.</p>
-            <div className="home-hero__actions"><Link href="/contact" className="bw-button-primary">Request a free trial →</Link><Link href="/courses" className="bw-button-secondary">Explore courses</Link></div>
-            <p className="home-hero__note">For families in the UK, US, Canada and beyond: share your city and preferred local times so we can discuss availability.</p>
-          </div>
-          <div className="home-hero__panel">
-            <p className="eyebrow">A plan that starts with you</p>
-            <p className="home-hero__number">1:1</p>
-            <p className="home-hero__panel-title">Room to ask. Time to practise.</p>
-            <ul><li>Start at the learner’s current level</li><li>Discuss your teacher and language preferences</li><li>Agree a schedule and fees before regular lessons</li></ul>
-            <Link href="/pricing" className="text-link">Questions to ask about fees →</Link>
-          </div>
-        </div>
-      </section>
-      <section className="home-stats" aria-label="Learning approach">
-        {siteConfig.stats.map(stat => <div key={stat.label} className="home-stat"><p>{stat.value}</p><span>{stat.label}</span></div>)}
-      </section>
-      <section id="courses" className="home-section">
-        <div className="section-heading"><div><p className="eyebrow">Learn with intention</p><h2>Find your starting point</h2></div><p>Learn what each course involves before discussing the right fit.</p></div>
-        <div className="home-course-grid">{siteConfig.courses.map(course => <article key={course.code} className="bw-card home-course-card"><span className="card-kicker">Course {course.code}</span><h3><Link href={`/courses/${course.slug}`}>{course.title}</Link></h3><p className="home-course-card__description">{course.description}</p><ul className="home-topics">{course.topics.map(topic => <li key={topic}>{topic}</li>)}</ul><Link href={`/courses/${course.slug}`} className="text-link">Explore this course →</Link></article>)}</div>
-      </section>
-      <section className="home-section home-steps"><div className="section-heading"><div><p className="eyebrow">A simple beginning</p><h2>Three steps to get started</h2></div></div><div className="home-step-grid">{siteConfig.steps.map(step => <div key={step.step} className="bw-card home-step"><p className="step-number">{step.step}</p><h3>{step.title}</h3><p>{step.desc}</p></div>)}</div></section>
-      <section className="home-section home-guidance"><div className="bw-card guidance-card"><p className="eyebrow">For parents</p><h2>Parents are part of the conversation</h2><p>Ask about your proposed teacher’s background, agree how you will stay involved and discuss lesson boundaries before starting.</p><Link href="/safety" className="text-link">Read parent guidance →</Link></div><div className="bw-card guidance-card guidance-card--accent"><p className="eyebrow">Helpful reading</p><h2>Practical guidance for home learning</h2><p>Prepare for a first lesson, plan a manageable routine and choose the questions that matter for your family.</p><Link href="/blog" className="text-link">Explore parent guides →</Link></div></section>
-    </main>
-  );
+  return <main className="site-main">
+    <PageHero home image="family" eyebrow="Quran learning. A little closer to home." title={<>Small steps.<br />Steady learning.<br /><em>A lasting connection.</em></>} description="Live, one-on-one online Quran classes for kids and families. From a first Arabic letter to a regular reading routine, begin with guidance that considers your learner." asideValue="Together, from home." asideLabel="One learner. One thoughtful starting point.">
+      <div className="hero-actions"><ActionLink href="/contact">Request a free trial</ActionLink><ActionLink href="/courses" secondary>Explore the courses</ActionLink></div>
+      <p className="hero-small-note">Share your city and local times. Teacher availability, language and fees are discussed before booking.</p>
+    </PageHero>
+    <div className="chapter-ribbon"><div className="story-container story-grid--four">
+      <div className="ribbon-item"><LineIcon kind="message" /><div><strong>One-to-one</strong><span>Space to ask and practise</span></div></div>
+      <div className="ribbon-item"><LineIcon kind="home" /><div><strong>From your home</strong><span>A familiar place to learn</span></div></div>
+      <div className="ribbon-item"><LineIcon kind="path" /><div><strong>At your level</strong><span>Discuss a suitable starting point</span></div></div>
+      <div className="ribbon-item"><LineIcon kind="spark" /><div><strong>A free trial</strong><span>Meet before you decide</span></div></div>
+    </div></div>
+    <StorySection theme="paper"><div className="story-split"><StoryImage kind="study" caption="Make a little room for a meaningful routine." /><div data-reveal><p className="eyebrow">First, a place to begin</p><h2 className="editorial-title">More than a lesson.<br /><em>A rhythm for your family.</em></h2><div className="story-prose"><p>Learning can start with a curious child, an adult returning to reading, or a family finding its feet. You do not need a finished plan to take the first step.</p><p>Talk about what the learner knows, what feels difficult and how much practice fits into everyday life. A manageable routine gives lessons a place alongside school, work and family time.</p></div><ActionLink href="/about" secondary>Our approach to learning</ActionLink></div></div></StorySection>
+    <StorySection id="courses"><SectionHeading eyebrow="Choose your next chapter" title={<>A starting point<br /><em>for every stage.</em></>} description="Build foundations, develop reading, discuss memorization or explore meaning. Each course is a conversation about where you are today." /><div className="course-grid">{siteConfig.courses.map(course => <CourseCard key={course.slug} course={course} />)}</div></StorySection>
+    <StorySection theme="soft"><SectionHeading eyebrow="From wondering to beginning" title={<>A simple path.<br /><em>A personal conversation.</em></>} description="Start with an enquiry. Use the trial to ask questions. Agree the details before beginning regular lessons." /><JourneySteps /></StorySection>
+    <StorySection><div className="story-split"><div data-reveal><p className="eyebrow">Parents belong in the story</p><h2 className="editorial-title">A connection you<br /><em>can be part of.</em></h2><div className="story-prose"><p>A child’s learning is a shared conversation. Speak with the proposed teacher, observe how explanations work and agree how you will stay involved.</p><p>Ask about experience, supervision, communication and recording before joining. Feeling comfortable enough to ask questions matters from the very beginning.</p></div><ActionLink href="/safety" secondary>Read parent guidance</ActionLink></div><StoryImage kind="family" className="story-photo--arch" caption="A conceptual illustration of learning together." /></div></StorySection>
+    <StorySection theme="paper"><SectionHeading eyebrow="Notes for the journey" title={<>Little things that make<br /><em>learning feel easier.</em></>} description="Practical guides for preparing a lesson, choosing the right questions and building a routine at home." /><div className="journal-grid">{blogsData.slice(0,3).map(post => <ArticleCard key={post.slug} post={post} />)}</div><div className="section-action"><ActionLink href="/blog" secondary>Explore all parent guides</ActionLink></div></StorySection>
+    <CallToAction />
+  </main>;
 }
